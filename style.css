@@ -1,0 +1,453 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body {
+    min-height: 100vh;
+    color: #344b63;
+    background:
+        radial-gradient(circle at 8% 10%, #ffffff 0, transparent 20%),
+        radial-gradient(circle at 90% 85%, #ffffff 0, transparent 22%),
+        linear-gradient(135deg, #eaf4ff, #c9def2);
+}
+.container-entrada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at top left, rgba(255,255,255,0.9), transparent 45%),
+        radial-gradient(ellipse at bottom right, rgba(255,255,255,0.7), transparent 40%),
+        linear-gradient(135deg, #eaf4ff, #c7dff4);
+}
+.container-entrada::before {
+    content: "✦";
+    position: absolute;
+    top: 12%;
+    left: 13%;
+    font-size: 65px;
+    color: #a7c6e3;
+    opacity: 0.65;
+    transform: rotate(-15deg);
+}
+.container-entrada::after {
+    content: "✧";
+    position: absolute;
+    bottom: 12%;
+    right: 13%;
+    font-size: 80px;
+    color: #91b6d8;
+    opacity: 0.6;
+    transform: rotate(15deg);
+}
+.container-entrada h1 {
+    color: #315b82;
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+    text-shadow: 0 3px 8px rgba(49, 91, 130, 0.12);
+}
+.container-entrada h1::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    margin: 13px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #9fc2e2, #d7b979);
+}
+.container-entrada p {
+    color: #718ba5;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+.container-entrada input {
+    width: 330px;
+    max-width: 100%;
+    margin: 22px 0 18px;
+    padding: 17px 20px;
+    font-size: 15px;
+    color: #315b82;
+    background: rgba(255,255,255,0.95);
+    border: 2px solid #d3e4f3;
+    border-radius: 14px;
+    outline: none;
+    box-shadow:
+        0 8px 20px rgba(66, 105, 143, 0.09),
+        inset 0 1px 3px rgba(255,255,255,0.9);
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+}
+.container-entrada input::placeholder {
+    color: #a4b8ca;
+}
+.container-entrada input:focus {
+    border-color: #79a5ce;
+    box-shadow: 0 0 0 5px rgba(121, 165, 206, 0.15);
+    transform: translateY(-3px);
+}
+.container-entrada button {
+    padding: 16px 35px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    background: linear-gradient(135deg, #75a4ce, #315f87);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 13px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 7px 18px rgba(49, 95, 135, 0.24);
+    transition: 0.3s;
+}
+.container-entrada button:hover {
+    background: linear-gradient(135deg, #568ab9, #244967);
+    transform: translateY(-3px);
+    box-shadow: 0 11px 22px rgba(49, 95, 135, 0.3);
+}
+#tela-prova {
+    padding: 40px 20px;
+}
+#tela-prova .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.97);
+    border: 1px solid #dce9f5;
+    border-radius: 22px;
+    box-shadow:
+        0 15px 40px rgba(43, 79, 116, 0.12),
+        0 2px 8px rgba(43, 79, 116, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+#tela-prova .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background: linear-gradient(
+        90deg,
+        #315f87,
+        #8eb9df,
+        #d8c18d,
+        #8eb9df,
+        #315f87
+    );
+}
+#tela-prova h1 {
+    text-align: center;
+    color: #315b82;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 12px 0 14px;
+    letter-spacing: 0.4px;
+}
+#tela-prova h1::after {
+    content: "✦";
+    display: block;
+    color: #c6a96d;
+    font-size: 19px;
+    margin-top: 9px;
+}
+#saudacao-aluno {
+    text-align: center;
+    color: #7295b5;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.abas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding: 18px;
+    background: linear-gradient(135deg, #f7fbff, #edf5fc);
+    border: 1px solid #e1ebf5;
+    border-radius: 15px;
+}
+.tab-btn {
+    padding: 13px 23px;
+    background: white;
+    color: #52799d;
+    border: 1px solid #d9e7f3;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(43, 79, 116, 0.05);
+    transition: 0.3s;
+}
+.tab-btn:hover {
+    background: #eaf4fd;
+    border-color: #91b6d8;
+    color: #315b82;
+    transform: translateY(-3px);
+}
+.tab-btn.active {
+    color: white;
+    background: linear-gradient(135deg, #78a6ce, #315f87);
+    border-color: #477da9;
+    box-shadow: 0 6px 14px rgba(49, 95, 135, 0.22);
+    transform: translateY(-2px);
+}
+.prova-container {
+    display: none;
+}
+.prova-container.active {
+    display: block;
+}
+.prova-titulo {
+    color: #315b82;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding: 18px 20px;
+    background: linear-gradient(100deg, #eaf4fd, #f9fcff);
+    border-left: 5px solid #78a6ce;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(43, 79, 116, 0.05);
+}
+.questao {
+    position: relative;
+    margin-bottom: 27px;
+    padding: 27px;
+    background: linear-gradient(145deg, #ffffff, #f4f9fe);
+    border: 1px solid #dce9f5;
+    border-left: 5px solid #78a6ce;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(43, 79, 116, 0.06);
+    transition: 0.25s;
+}
+.questao:hover {
+    border-color: #b5d0ec;
+    border-left-color: #315f87;
+
+    box-shadow: 0 9px 22px rgba(43, 79, 116, 0.11);
+    transform: translateY(-2px);
+}
+.questao::after {
+    content: "✧";
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    color: #b7cfe5;
+    font-size: 20px;
+    pointer-events: none;
+}
+.questao p {
+    color: #315b82;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+    padding-right: 20px;
+}
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    background: #ffffff;
+    border: 1px solid #e0eaf3;
+    border-radius: 11px;
+    color: #526779;
+    font-size: 14px;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.opcao:hover {
+    background: #edf5fc;
+    border-color: #91b6d8;
+    color: #315b82;
+    transform: translateX(4px);
+}
+.opcao input {
+    margin-right: 3px;
+    accent-color: #477da9;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.opcao:has(input:checked) {
+    background: #eaf4fd;
+    border: 1px solid #78a6ce;
+    color: #315b82;
+    font-weight: bold;
+    box-shadow: 0 3px 9px rgba(71, 125, 169, 0.1);
+}
+.btn-calcular,
+.btn-limpar {
+    padding: 14px 25px;
+    margin-top: 15px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-calcular {
+    background: linear-gradient(135deg, #75a4ce, #315f87);
+    box-shadow: 0 5px 13px rgba(49, 95, 135, 0.19);
+}
+.btn-calcular:hover {
+    background: linear-gradient(135deg, #568ab9, #244967);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 17px rgba(49, 95, 135, 0.25);
+}
+.btn-limpar {
+    background: linear-gradient(135deg, #df9298, #c65e69);
+    box-shadow: 0 4px 12px rgba(198, 94, 105, 0.15);
+}
+.btn-limpar:hover {
+    background: #b94b58;
+    transform: translateY(-2px);
+}
+.resultado {
+    display: none;
+
+    margin-top: 22px;
+    padding: 22px;
+
+    color: #315b82;
+    background: linear-gradient(135deg, #edf6ff, #ffffff);
+
+    border: 1px solid #cbdff0;
+    border-left: 5px solid #78a6ce;
+    border-radius: 12px;
+
+    font-weight: bold;
+    line-height: 1.8;
+}
+.resultado.visivel {
+    display: block;
+}
+.painel-historico {
+    margin-top: 42px;
+    padding: 27px;
+
+    background: linear-gradient(145deg, #f7fbff, #edf5fc);
+
+    border: 1px solid #dce9f5;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 13px rgba(43, 79, 116, 0.05);
+}
+.painel-historico h2 {
+    color: #315b82;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+.lista-notas {
+    list-style: none;
+    margin: 15px 0;
+}
+.lista-notas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+
+    background: white;
+    border: 1px solid #e0eaf3;
+    border-radius: 11px;
+    color: #526779;
+    font-size: 14px;
+    box-shadow: 0 3px 8px rgba(43, 79, 116, 0.04);
+}
+.status-concluido {
+    color: #27865a;
+    font-weight: bold;
+}
+.status-pendente {
+    color: #8a98a6;
+    font-style: italic;
+}
+@media (max-width: 600px) {
+    .container-entrada {
+        padding: 20px;
+    }
+    .container-entrada h1 {
+        font-size: 27px;
+    }
+    .container-entrada::before {
+        top: 8%;
+        left: 5%;
+        font-size: 40px;
+    }
+    .container-entrada::after {
+        bottom: 8%;
+        right: 5%;
+        font-size: 50px;
+    }
+    #tela-prova {
+        padding: 18px 10px;
+    }
+    #tela-prova .container {
+        padding: 22px 16px;
+        border-radius: 15px;
+    }
+    #tela-prova h1 {
+        font-size: 24px;
+    }
+    .abas-container {
+        padding: 13px;
+        gap: 8px;
+    }
+    .tab-btn {
+        padding: 11px 14px;
+        font-size: 13px;
+    }
+    .prova-titulo {
+        font-size: 20px;
+        padding: 15px;
+    }
+    .questao {
+        padding: 19px 16px;
+        margin-bottom: 20px;
+    }
+    .questao p {
+        font-size: 15px;
+    }
+    .opcao {
+        padding: 12px;
+        font-size: 13px;
+    }
+    .painel-historico {
+        padding: 19px;
+    }
+    .lista-notas li {
+        font-size: 13px;
+        flex-wrap: wrap;
+    }
+    .btn-calcular,
+    .btn-limpar {
+        width: 100%;
+    }
+}
